@@ -1,0 +1,23 @@
+import random
+
+choices = ['rock', 'paper', 'scissors']
+
+def play_game(player_choice):
+    computer_choice = random.choice(choices)
+    print(f"Computer chose: {computer_choice}")
+    
+    if player_choice == computer_choice:
+        return "It's a tie!"
+    elif (player_choice == 'rock' and computer_choice == 'scissors') or (player_choice == 'paper' and computer_choice == 'rock') or (player_choice == 'scissors' and computer_choice == 'paper'):
+        return "You win!"
+    else:
+        return "You lose!"
+
+while True:
+    player_choice = input("Enter rock, paper, or scissors (or 'exit' to quit): ").lower()
+    if player_choice == 'exit':
+        break
+    elif player_choice in choices:
+        print(play_game(player_choice))
+    else:
+        print("Invalid choice.")
