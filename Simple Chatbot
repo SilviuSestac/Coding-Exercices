@@ -1,0 +1,17 @@
+import random
+
+responses = {
+    "hello": ["Hi!", "Hello!", "Hey!"],
+    "how are you": ["I'm fine, thank you.", "I'm good, how about you?", "Doing well!"],
+    "bye": ["Goodbye!", "See you!", "Bye!"]
+}
+
+while True:
+    user_input = input("You: ").lower()
+    if user_input in responses:
+        print("Bot:", random.choice(responses[user_input]))
+    elif user_input == "exit":
+        print("Bot: Goodbye!")
+        break
+    else:
+        print("Bot: Sorry, I didn't understand that.")
