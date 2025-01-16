@@ -1,0 +1,14 @@
+import time
+import winsound
+
+def alarm_time():
+    alarm = input("Enter the time in HH:MM format: ")
+    while True:
+        current_time = time.strftime("%H:%M")
+        if current_time == alarm:
+            print("Alarm ringing!")
+            winsound.Beep(1000, 1000)
+            break
+        time.sleep(60)
+
+alarm_time()
